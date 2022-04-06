@@ -1,0 +1,13 @@
+@startuml
+class UsuarioController{
+ - usuarioService : UsuarioService
+ --
+ + obtenerUsuarios() : ArrayList<UsuarioModel>
+ + guardarUsuario(@RequestBody UsuarioModel usuario) : UsuarioModel
+ + obtenerUsuarioPorId(@PathVariable("id") Long id) : Optional<UsuarioModel>
+ + obtenerUsuarioPorPrioridad(@RequestParam("prioridad") Integer prioridad) : ArrayList<UsuarioModel>
+ + eliminarPorId(@PathVariable("id") Long id) : String
+ + actualizarUsuario(@RequestBody UsuarioModel usuario) : UsuarioModel
+ + eliminarTodo() : String
+}
+@enduml
